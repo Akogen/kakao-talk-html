@@ -3,10 +3,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 50px var(--horizontal-space) 25px var(--horizontal-space);
+  margin-bottom: 10px;
 }
 .screen-header__title {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 600;
+}
+.screen-header__icons {
+  position: relative;
 }
 .screen-header__icons span {
   margin-left: 43px;
@@ -16,4 +20,16 @@
 }
 .fa-chevron-right {
   margin-left: 10px;
+}
+.screen-header__icons-cog {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6px;
+  height: 6px;
+  background-color: tomato;
+  border-radius: 3px;
 }

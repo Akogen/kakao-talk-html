@@ -17,23 +17,14 @@
 }
 .nav__notification {
   position: absolute;
-  top: -33px;
-  right: -10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  background-color: tomato;
-  border-radius: 15px;
-  color: white;
-  font-weight: 600;
-  text-decoration: none;
+  top: -20px;
+  right: -8px;
+
   transform: scaleX(1.2);
 }
 .nav__alert {
   position: absolute;
-  top: -25px;
+  top: -15px;
   right: -5px;
   display: flex;
   justify-content: center;

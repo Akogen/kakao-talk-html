@@ -11,7 +11,7 @@
   width: 33%;
 }
 .status-bar__column span {
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 1000;
 }
 .status-bar__column:first-child span {
