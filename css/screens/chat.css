@@ -82,3 +82,56 @@
 .message-row--own .message__info {
   flex-direction: row-reverse;
 }
+.reply {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 25px;
+  background-color: white;
+  color: rgba(0, 0, 0, 0.5);
+}
+.reply .reply__column:first-child {
+  width: 10%;
+}
+.reply .reply__column:last-child {
+  position: relative;
+  width: 90%;
+}
+.reply i {
+  opacity: 0.5;
+}
+.reply input {
+  width: 100%;
+  height: 30px;
+  border: var(--main-border);
+  border-radius: 20px;
+  padding-left: 10px;
+}
+.reply__column:last-child > span,
+.reply__column:last-child > button {
+  position: absolute;
+  top: 1px;
+  right: -11px;
+}
+.reply__column:last-child > span {
+  top: 9px;
+  right: 30px;
+}
+.reply__column button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--yellow);
+}
+.reply__column button i {
+  opacity: 1;
+}
+.reply__column button:fucus,
+.reply__column button:active {
+  outline: none;
+}
