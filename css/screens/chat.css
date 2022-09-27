@@ -1,5 +1,5 @@
 #chat-screen {
-  height: 100vh;
+  height: 150vh;
   background-color: var(--chat-backgroundcolor);
 }
 #chat-screen .alt-header,
@@ -18,11 +18,23 @@
   z-index: 998;
   top: 10px;
 }
+@keyframes fadeIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
 .main-chat {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 110px;
+
+  animation: fadeIn 1s linear;
 }
 .chat__timestamp {
   z-index: 3;
@@ -72,6 +84,32 @@
 .message-row--own {
   justify-content: flex-end;
 }
+
+@keyframes fadeInMessage {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+.message-row--response .message__info {
+  opacity: 0;
+
+  animation: fadeInMessage 2s ease-out forwards;
+  animation-delay: 2s;
+}
+
+@keyframes fadeInMessageOwn {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+  }
+}
 .message-row--own .message__bubble {
   margin-right: 0px;
   margin-left: 5px;
@@ -81,6 +119,10 @@
 }
 .message-row--own .message__info {
   flex-direction: row-reverse;
+  opacity: 0;
+
+  animation: fadeInMessageOwn 2s ease-out forwards;
+  animation-delay: 3s;
 }
 .reply {
   position: fixed;
@@ -93,6 +135,8 @@
   padding: 5px 25px;
   background-color: white;
   color: rgba(0, 0, 0, 0.5);
+
+  transition: all 0.3s ease-in-out;
 }
 .reply .reply__column:first-child {
   width: 10%;
@@ -110,6 +154,8 @@
   border: var(--main-border);
   border-radius: 20px;
   padding-left: 10px;
+
+  transition: all 0.3s ease-in-out;
 }
 .reply__column:last-child > span,
 .reply__column:last-child > button {
@@ -134,4 +180,24 @@
 .reply__column button:fucus,
 .reply__column button:active {
   outline: none;
+}
+.reply .reply__column:first-child,
+.reply .fa-smile-wink,
+.reply button {
+  transition: opacity 0.3s ease-in-out;
+}
+.reply:focus-within {
+  transform: translateY(20px);
+}
+.reply:focus-within .reply__column:first-child,
+.reply:focus-within .fa-smile-wink,
+.reply:focus-within button {
+  opacity: 0;
+}
+.reply:focus-within input {
+  width: 90vw;
+  transform: translateX(-67px) translateY(-80px);
+}
+.reply:focus-within {
+  transform: translateY(80px);
 }
